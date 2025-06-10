@@ -1,0 +1,54 @@
+{
+    "manifest_version": 3,
+    "name": "Focus Assistant",
+    "version": "1.0",
+    "description": "Chặn các trang web gây xao nhãng và quản lý thời gian thông minh.",
+    "permissions": [
+        "storage",
+        "alarms",
+        "declarativeNetRequest",
+        "declarativeNetRequestFeedback",
+        "notifications"
+    ],
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "popup/popup.html",
+        "default_icon": {
+            "16": "icons/icon16.png",
+            "48": "icons/icon48.png",
+            "128": "icons/icon128.png"
+        }
+    },
+    "options_page": "options/options.html",
+    "icons": {
+        "16": "icons/icon16.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
+    },
+    "declarative_net_request": {
+        "rule_resources": [
+            {
+                "id": "ruleset_1",
+                "enabled": true,
+                "path": "rules.json"
+            }
+        ]
+    },
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "blocked_pages/*.html",
+                "blocked_pages/*.css",
+                "info/*.html"
+            ],
+            "matches": [
+                "<all_urls>"
+            ]
+        }
+    ]
+}

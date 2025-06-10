@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Focus Assistant</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+
+<body class="theme-light"> <!-- Thêm class mặc định -->
+    <div class="container">
+        <div class="header">
+            <h1 data-lang-key="popupTitle">Focus Assistant</h1>
+            <div class="header-controls">
+                <button id="themeToggleBtn" class="theme-toggle-btn" title="Chuyển đổi giao diện">
+                    ☀️ <!-- Icon mặc định, sẽ thay đổi bằng JS -->
+                </button>
+                <button id="langToggleBtn" class="lang-toggle-btn" title="Switch Language">
+                    🇻🇳 <!-- Icon mặc định, sẽ thay đổi bằng JS -->
+                </button>
+                <label class="switch header-switch" title="Bật/Tắt Chế độ Tập trung">
+                    <input type="checkbox" id="headerFocusToggle">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </div>
+
+        <div class="section quick-block-section">
+            <h2 data-lang-key="quickBlockHeader">Chặn nhanh trang web</h2>
+            <div class="input-group">
+                <input type="text" id="quickBlockUrl" placeholder="ví dụ: example.com"
+                    data-lang-key="quickBlockPlaceholder">
+                <button id="quickBlockBtn" data-lang-key="quickBlockButton">Thêm</button>
+            </div>
+            <ul id="quickBlockedSitesList" class="quick-blocked-sites-list"></ul>
+        </div>
+
+        <div class="section">
+            <h2 data-lang-key="pomodoroHeader">Pomodoro Timer</h2>
+            <div id="pomodoroDisplay">
+                <div id="pomodoroTimer">--:--</div>
+                <p id="pomodoroStatus" data-lang-key="pomodoroStatusDefault">Chưa bắt đầu</p>
+            </div>
+            <div class="pomodoro-controls">
+                <div class="duration-input-group"> <!-- Thêm div này -->
+                    <label for="pomodoroDuration" data-lang-key="pomodoroDurationLabel">Thời gian (phút):</label>
+                    <input type="number" id="pomodoroDuration" value="25" min="1">
+                </div>
+                <button id="startPomodoro" data-lang-key="startPomodoro">Bắt đầu Pomodoro</button>
+                <button id="stopPomodoro" class="hidden" data-lang-key="stopPomodoro">Dừng Pomodoro</button>
+            </div>
+        </div>
+        <footer>
+            <a href="#" id="openOptionsPage" data-lang-key="openOptionsLink" title="Mở trang Tùy chọn">Tùy chọn</a>
+            <a href="#" id="openInfoPage" data-lang-key="openInfoLink" title="Xem hướng dẫn và thông tin">Trợ giúp &
+                Thông tin</a>
+        </footer>
+    </div>
+    <script src="popup.js"></script>
+</body>
+
+</html>

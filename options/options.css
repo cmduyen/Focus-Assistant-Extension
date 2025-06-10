@@ -1,0 +1,351 @@
+/* Biến màu cho Light Theme (Mặc định) */
+:root {
+    --body-bg-color: #f8f9fa;
+    --text-color: #212529;
+    --container-bg-color: #fff;
+    --card-bg-color: rgba(255, 255, 255, 0.7); /* Nền card trong suốt hơn cho glass */
+    --card-border-color: rgba(255, 255, 255, 0.3); /* Viền sáng hơn cho glass */
+    --container-shadow-color: rgba(0, 0, 0, 0.075);
+    --header-color: #343a40;
+    --subheader-color: #495057;
+    --subheader-border-color: #0d6efd; /* Màu accent cho đường kẻ dưới h2 */
+    --section-bg-color: #fdfdfd;
+    --section-border-color: #e9ecef;
+    --input-border-color: #ced4da;
+    --input-bg-color: #f8f9fa; /* Nền input sáng hơn */
+    --button-bg-color: #0d6efd;
+    --button-text-color: white;
+    --button-hover-bg-color: #0b5ed7;
+    --button-disabled-bg-color: #adb5bd;
+    --remove-button-bg-color: #dc3545;
+    --remove-button-hover-bg-color: #c82333;
+    --note-text-color: #6c757d; /* Màu chữ note */
+    --schedule-form-bg-color: #fcfcfc;
+    --schedule-form-border-color: #e0e0e0;
+    --days-selector-button-bg-color: #e9ecef;
+    --days-selector-button-text-color: #495057;
+    --days-selector-button-border-color: #ced4da;
+    --days-selector-button-selected-bg-color: #0d6efd;
+    --days-selector-button-selected-text-color: white;
+    --days-selector-button-selected-border-color: #0d6efd;
+    --schedule-item-bg-color: #fff;
+    --schedule-item-border-color: #e9ecef;
+    --empty-list-text-color: #6c757d;
+    --switch-slider-bg-color: #ced4da; /* Màu nền của switch khi off */
+    --switch-slider-checked-bg-color: #0d6efd; /* Màu nền của switch khi on (màu accent) */
+    --switch-slider-focus-shadow-color: rgba(13, 110, 253, 0.25); /* Shadow khi focus switch */
+    --switch-slider-knob-bg-color: white;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 20px;
+  background-color: var(--body-bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  font-size: 15px; /* Cỡ chữ cơ bản cho options */
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: var(--container-bg-color);
+  padding: 25px 35px; /* Tăng padding cho container chính */
+  border-radius: 8px;
+  box-shadow: 0 4px 12px var(--container-shadow-color); /* Đổ bóng rõ hơn cho container chính */
+}
+
+h1 {
+  text-align: center;
+  color: var(--header-color);
+  margin-bottom: 35px; /* Tăng khoảng cách dưới h1 */
+  font-size: 2em;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 1.5em;
+  color: var(--subheader-color);
+  border-bottom: 2px solid var(--subheader-border-color);
+  padding-bottom: 10px;
+  margin-top: 35px; /* Tăng khoảng cách trên h2 */
+  margin-bottom: 25px; /* Tăng khoảng cách dưới h2 */
+  font-weight: 500;
+}
+
+h3 {
+    font-size: 1.2em;
+    color: var(--subheader-color); /* Sử dụng màu subheader cho nhất quán */
+    margin-top: 25px;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.section {
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: var(--card-bg-color); /* Nền trong suốt */
+  border: 1px solid var(--section-border-color);
+  backdrop-filter: blur(8px); /* Hiệu ứng kính mờ, có thể giảm blur một chút so với popup */
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 2px 8px var(--container-shadow-color); /* Điều chỉnh đổ bóng cho section */
+  border-radius: 5px;
+}
+
+.input-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.input-group input[type="text"] {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid var(--input-border-color);
+  border-radius: 4px;
+  background-color: var(--input-bg-color);
+  color: var(--text-color);
+  font-size: 1em;
+}
+
+button {
+  padding: 10px 20px;
+  border: 1px solid transparent;
+  border-radius: 6px; /* Bo góc mềm mại hơn */
+  cursor: pointer;
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
+  font-size: 1em;
+  transition: background-color 0.2s ease;
+  font-weight: 500;
+}
+
+button:hover {
+  background-color: var(--button-hover-bg-color);
+}
+
+button:disabled {
+  background-color: var(--button-disabled-bg-color);
+  cursor: not-allowed;
+}
+
+#blockedSitesList {
+  list-style: none;
+  padding: 0;
+}
+
+#blockedSitesList li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid var(--section-border-color); /* Use a consistent border color */
+}
+#blockedSitesList li:last-child {
+  border-bottom: none;
+}
+#blockedSitesList li.empty-list {
+    color: var(--empty-list-text-color);
+    font-style: italic;
+}
+
+
+.remove-btn, .remove-schedule-btn {
+  background-color: var(--remove-button-bg-color);
+  font-size: 0.9em;
+  padding: 6px 12px;
+}
+.remove-btn:hover, .remove-schedule-btn:hover {
+  background-color: var(--remove-button-hover-bg-color);
+}
+
+.note {
+  font-size: 0.9em;
+  color: var(--note-text-color);
+  margin-top: 10px;
+}
+
+/* Styles for Schedules */
+.schedule-form {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid var(--schedule-form-border-color);
+  border-radius: 4px;
+  background-color: var(--schedule-form-bg-color);
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: var(--subheader-color); /* Or a specific label color */
+}
+
+.days-selector {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+.days-selector button {
+  background-color: var(--days-selector-button-bg-color);
+  color: var(--days-selector-button-text-color);
+  border: 1px solid var(--days-selector-button-border-color);
+  padding: 8px 12px;
+}
+.days-selector button.selected {
+  background-color: var(--days-selector-button-selected-bg-color);
+  color: var(--days-selector-button-selected-text-color);
+  border-color: var(--days-selector-button-selected-border-color);
+}
+
+.time-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.time-group input[type="time"] {
+  padding: 8px;
+  border: 1px solid var(--input-border-color);
+  border-radius: 4px;
+  background-color: var(--input-bg-color);
+  color: var(--text-color);
+  font-size: 0.95em;
+}
+
+#schedulesList .schedule-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  border-bottom: 1px solid var(--schedule-item-border-color);
+  background-color: var(--schedule-item-bg-color);
+  border-radius: 3px;
+  margin-bottom: 8px;
+}
+#schedulesList .schedule-item:last-child {
+  border-bottom: none;
+}
+#schedulesList .empty-list {
+    color: var(--empty-list-text-color);
+    font-style: italic;
+    padding: 10px 0;
+}
+
+/* Toggle Switch for schedule active state */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px; /* Reduced width */
+  height: 28px; /* Reduced height */
+  margin: 0 10px;
+}
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute; 
+  cursor: pointer;
+  top: 0;
+  left: 0; 
+  right: 0;
+  bottom: 0;
+  background-color: var(--switch-slider-bg-color);
+  transition: .4s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px; /* Reduced size */
+  width: 20px;  /* Reduced size */
+  left: 4px;    /* Adjusted position */
+  bottom: 4px;  /* Adjusted position */
+  background-color: var(--switch-slider-knob-bg-color);
+  transition: .4s;
+}
+input:checked + .slider {
+  background-color: var(--switch-slider-checked-bg-color);
+}
+input:focus + .slider {
+  box-shadow: 0 0 0 0.2rem var(--switch-slider-focus-shadow-color); /* Shadow kiểu Bootstrap */
+
+}
+input:checked + .slider:before {
+  transform: translateX(22px); /* Adjusted translation */
+}
+.slider.round {
+  border-radius: 28px; /* Adjusted for height */
+}
+.slider.round:before {
+  border-radius: 50%;
+}
+
+
+/* Styles for Strict Mode */
+.setting-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.setting-item label {
+    font-weight: bold;
+}
+#strictModeToggle {
+  width: 20px;
+  height: 20px;
+}
+#strictModeStatus {
+  font-weight: bold;
+}
+.status-on { color: #4CAF50; } /* Green */
+.status-off { color: #F44336; } /* Red */
+
+/* Dark Theme Styles */
+.theme-dark {
+    --body-bg-color: #202124;
+    --text-color: #e8eaed;
+    --container-bg-color: #303134;
+    --card-bg-color: rgba(45, 46, 48, 0.75); /* Nền card tối trong suốt */
+    --card-border-color: rgba(255, 255, 255, 0.15); /* Viền sáng mờ */
+    --container-shadow-color: rgba(0,0,0,0.4);
+    --header-color: #ecf0f1;
+    --subheader-color: #bdc3c7;
+    --subheader-border-color: #8ab4f8; /* Màu accent cho đường kẻ dưới h2 */
+    --section-bg-color: #3c4043; /* Nền section tối hơn một chút */
+    --section-border-color: #5f6368;
+    --input-border-color: #5f6368;
+    --input-bg-color: #2d2e30; /* Nền input tối hơn */
+    --button-bg-color: #8ab4f8;
+    --button-text-color: #202124; /* Chữ tối trên nút sáng */
+    --button-hover-bg-color: #aecbfa;
+    --button-disabled-bg-color: #424549;
+    --remove-button-bg-color: #e74c3c; /* Darker red for dark theme */
+    --remove-button-hover-bg-color: #c0392b;
+    --note-text-color: #bdc3c7;
+    --schedule-form-bg-color: #35363a;
+    --schedule-form-border-color: #5f6368;
+    --days-selector-button-bg-color: #424549;
+    --days-selector-button-text-color: #e8eaed;
+    --days-selector-button-border-color: #5f6368;
+    --days-selector-button-selected-bg-color: #8ab4f8;
+    --days-selector-button-selected-text-color: #202124;
+    --days-selector-button-selected-border-color: #8ab4f8;
+    --schedule-item-bg-color: #3c4043;
+    --schedule-item-border-color: #5f6368;
+    --empty-list-text-color: #bdc3c7;
+    --switch-slider-bg-color: #5f6368;
+    --switch-slider-checked-bg-color: #8ab4f8; /* Màu accent cho switch */
+    --switch-slider-focus-shadow-color: rgba(138, 180, 248, 0.35); /* Shadow khi focus switch */
+    --switch-slider-knob-bg-color: #e8eaed;
+}
+.theme-dark .section {
+    background-color: var(--card-bg-color);
+    border-color: var(--card-border-color);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}

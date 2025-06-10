@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tùy chọn Focus Assistant</title>
+    <link rel="stylesheet" href="options.css">
+</head>
+
+<body class="theme-light">
+    <div class="container">
+        <h1 data-lang-key="optionsTitle">Tùy chọn Focus Assistant</h1>
+        <div class="section">
+            <h2 data-lang-key="manageBlockedSitesHeader">Quản lý Danh sách Chặn</h2>
+            <div class="input-group"><input type="text" id="newSiteUrl" placeholder="ví dụ: youtube.com"
+                    data-lang-key="addSitePlaceholder"><button id="addSiteBtn" data-lang-key="addSiteButton">Thêm
+                    Trang</button></div>
+            <ul id="blockedSitesList">
+            </ul>
+        </div>
+        <div class="section">
+            <h2 data-lang-key="schedulesHeader">Lên lịch Chặn Tự động</h2>
+            <div id="schedulesList">
+            </div>
+            <div class="schedule-form">
+                <h3 data-lang-key="addScheduleHeader">Thêm Lịch trình Mới</h3>
+                <div class="form-group"><label data-lang-key="selectDaysLabel">Chọn ngày trong
+                        tuần:</label>
+                    <div id="daysOfWeek" class="days-selector">
+                        <button data-day="Mon" data-lang-key-day="dayMon">T2</button><button data-day="Tue"
+                            data-lang-key-day="dayTue">T3</button><button data-day="Wed"
+                            data-lang-key-day="dayWed">T4</button><button data-day="Thu"
+                            data-lang-key-day="dayThu">T5</button><button data-day="Fri"
+                            data-lang-key-day="dayFri">T6</button><button data-day="Sat"
+                            data-lang-key-day="daySat">T7</button><button data-day="Sun"
+                            data-lang-key-day="daySun">CN</button>
+                    </div>
+                </div>
+                <div class="form-group time-group"><label for="startTime"
+                        data-lang-key="timeFromLabel">Từ:</label><input type="time" id="startTime" required><label
+                        for="endTime" data-lang-key="timeToLabel">Đến:</label><input type="time" id="endTime" required>
+                </div><button id="addScheduleBtn" data-lang-key="addScheduleButton">Thêm Lịch trình</button>
+            </div>
+        </div>
+        <div class="section">
+            <h2 data-lang-key="advancedSettingsHeader">Cài đặt Nâng cao</h2>
+            <div class="setting-item"><label for="strictModeToggle" data-lang-key="strictModeLabel">Chế
+                    độ Nghiêm ngặt (Strict Mode):</label><input type="checkbox" id="strictModeToggle"><span
+                    id="strictModeStatus">TẮT</span>
+            </div>
+            <p class="note" data-lang-key="strictModeNote">Khi BẬT,
+                bạn không thể tắt chế độ chặn hoặc thay đổi danh sách chặn trong phiên Pomodoro hoặc
+                lịch trình đang diễn ra.</p>
+        </div>
+    </div>
+    <script src="options.js"></script>
+</body>
+
+</html>

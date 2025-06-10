@@ -1,0 +1,495 @@
+/* Biến màu cho Light Theme (Mặc định) */
+:root {
+  --bg-color: #f8f9fa;
+  /* Nền chính sáng hơn một chút */
+  --text-color: #212529;
+  /* Chữ đậm hơn, dễ đọc hơn */
+  --container-bg-color: #fff;
+  --header-color: #343a40;
+  /* Màu tiêu đề */
+  --subheader-color: #495057;
+  /* Màu tiêu đề phụ */
+  --border-color: #dee2e6;
+  /* Viền nhạt hơn */
+  --button-bg-color: #0d6efd;
+  /* Màu nút chính (Bootstrap 5 blue) */
+  --button-text-color: white;
+  --button-hover-bg-color: #0b5ed7;
+  /* Màu nút khi hover */
+  --button-disabled-bg-color: #adb5bd;
+  /* Màu nút bị vô hiệu hóa */
+  --input-border-color: #ced4da;
+  /* Viền input */
+  --link-color: #0d6efd;
+  /* Màu link */
+  --hr-color: #e9ecef;
+  /* Màu đường kẻ ngang */
+  --shadow-color: rgba(0, 0, 0, 0.075);
+  /* Đổ bóng nhẹ nhàng hơn */
+  --icon-button-color: #495057;
+  /* Màu cho nút icon (theme, lang) */
+  --icon-button-hover-bg-color: #e9ecef;
+  /* Nền khi hover nút icon */
+  --icon-button-active-bg-color: #d1dbe5;
+  /* Màu khi nhấn nút icon */
+}
+
+body {
+  font-family: sans-serif;
+  width: 300px;
+  padding: 12px;
+  /* Tăng padding một chút */
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-size: 14px;
+  /* Cỡ chữ cơ bản */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Header styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* margin-bottom: 12px; */
+  /* Bỏ margin nếu container có gap, hoặc điều chỉnh */
+}
+
+h1 {
+  font-size: 1.4em;
+  /* Điều chỉnh kích thước tiêu đề chính */
+  color: var(--header-color);
+  text-align: center;
+  margin: 0;
+  /* Xóa margin mặc định nếu header quản lý */
+  font-weight: 600;
+  line-height: 36px;
+  /* Đặt line-height bằng chiều cao của các nút control */
+  flex-grow: 1;
+  /* Cho phép tên extension chiếm không gian còn lại */
+  /* Tăng độ đậm một chút */
+}
+
+.theme-toggle-btn,
+.lang-toggle-btn {
+  /* Áp dụng cho cả hai nút */
+  background: none;
+  border: 1px solid transparent;
+  /* Thêm border mờ để giữ layout khi hover */
+  font-size: 1.3em;
+  /* Kích thước icon */
+  cursor: pointer;
+  padding: 6px;
+  /* Tăng padding */
+  color: var(--icon-button-color);
+  border-radius: 8px;
+  /* Bo góc nhẹ nhàng hơn thay vì tròn hẳn */
+  line-height: 1;
+  transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  width: 36px;
+  /* Đặt kích thước cố định để nhất quán */
+  height: 36px;
+  display: inline-flex;
+  /* Để căn giữa icon bên trong */
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-toggle-btn:hover,
+.lang-toggle-btn:hover {
+  background-color: var(--icon-button-hover-bg-color);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  /* Thêm đổ bóng nhẹ khi hover */
+}
+
+.theme-toggle-btn:active,
+.lang-toggle-btn:active {
+  background-color: var(--icon-button-active-bg-color);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.12);
+  /* Hiệu ứng nhấn nút */
+}
+
+/* Style cho div nhóm các nút control */
+.header-controls {
+  display: flex;
+  align-items: center;
+  /* Căn giữa các control theo chiều dọc */
+  gap: 6px;
+  /* Khoảng cách giữa các nút icon, giảm xuống để gần hơn */
+}
+
+/* Styles for the new header toggle switch */
+.header-switch {
+  position: relative;
+  display: inline-block;
+  width: 42px;
+  /* Điều chỉnh lại một chút cho cân đối */
+  /* Kích thước nhỏ hơn cho header */
+  height: 24px;
+  align-self: center;
+  /* Đảm bảo switch cũng được căn giữa theo chiều dọc trong flex container */
+  /* Kích thước nhỏ hơn cho header */
+}
+
+.header-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.header-switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  /* Màu nền khi tắt */
+  transition: .3s;
+  border-radius: 24px;
+  /* Bo tròn cho slider */
+}
+
+.header-switch .slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  /* Kích thước nút gạt */
+  width: 18px;
+  /* Kích thước nút gạt */
+  left: 3px;
+  /* Vị trí ban đầu của nút gạt */
+  bottom: 3px;
+  /* Vị trí ban đầu của nút gạt */
+  background-color: white;
+  transition: .3s;
+  border-radius: 50%;
+  /* Nút gạt tròn */
+}
+
+.header-switch input:checked+.slider {
+  background-color: var(--button-bg-color);
+  /* Màu nền khi bật (màu accent) */
+}
+
+.header-switch input:checked+.slider:before {
+  transform: translateX(20px);
+  /* Di chuyển nút gạt khi bật */
+}
+
+h2 {
+  font-size: 1.05em;
+  /* Điều chỉnh kích thước tiêu đề phụ */
+  color: var(--subheader-color);
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 5px;
+  margin-top: 0;
+}
+
+.section {
+  background-color: var(--container-bg-color);
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px var(--shadow-color);
+  /* Sử dụng biến đổ bóng */
+}
+
+#focusStatus {
+  font-weight: bold;
+}
+
+.status-on {
+  color: #4CAF50;
+  /* Green */
+}
+
+.status-off {
+  color: #F44336;
+  /* Red */
+}
+
+/* New styles to put status and toggle button on the same line */
+/* Nếu nút toggleFocusMode cũ bị xóa, các style này có thể không cần thiết nữa
+*/
+
+/* Styles for Quick Block Section */
+.quick-block-section .input-group {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.quick-block-section input[type="text"] {
+  flex-grow: 1;
+  padding: 8px;
+  border: 1px solid var(--input-border-color);
+  border-radius: 6px;
+  font-size: 0.9em;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.quick-block-section button {
+  padding: 8px 12px;
+  /* Giảm padding một chút cho nút nhỏ hơn */
+}
+
+/* Styles for the list of blocked sites in popup */
+.quick-blocked-sites-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+  max-height: 100px;
+  /* Giới hạn chiều cao, thêm thanh cuộn nếu cần */
+  overflow-y: auto;
+  border-top: 1px solid var(--border-color);
+  padding-top: 8px;
+}
+
+.quick-blocked-sites-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  /* Giảm padding cho vừa popup */
+  font-size: 0.9em;
+  border-bottom: 1px dashed var(--border-color);
+  /* Viền đứt nhẹ nhàng */
+}
+
+.quick-blocked-sites-list li:last-child {
+  border-bottom: none;
+}
+
+.quick-blocked-sites-list .remove-site-btn {
+  background-color: transparent;
+  color: var(--remove-button-bg-color);
+  /* Màu đỏ cho nút xóa */
+  border: none;
+  padding: 2px 5px;
+  font-size: 1.1em;
+  /* Kích thước icon 'x' hoặc text */
+  cursor: pointer;
+}
+
+button {
+  padding: 8px 15px;
+  border: 1px solid transparent;
+  /* Thêm border để nhất quán khi hover/focus */
+  border-radius: 6px;
+  /* Bo góc mềm mại hơn */
+  cursor: pointer;
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
+  font-size: 0.95em;
+  /* Tăng nhẹ cỡ chữ nút */
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: var(--button-hover-bg-color);
+}
+
+button:disabled {
+  background-color: var(--button-disabled-bg-color);
+  cursor: not-allowed;
+}
+
+#pomodoroDisplay {
+  text-align: center;
+  margin-bottom: 15px;
+  /* Tăng khoảng cách dưới một chút */
+  padding: 10px 0;
+  /* Thêm padding trên dưới cho cân đối hơn */
+}
+
+#pomodoroTimer {
+  font-size: 3em;
+  /* Làm cho số to hơn */
+  font-weight: 600;
+  /* Điều chỉnh độ đậm */
+  color: var(--text-color);
+  margin-bottom: 8px;
+  /* Tăng khoảng cách dưới số timer */
+  display: block;
+  /* Đảm bảo nó chiếm toàn bộ chiều rộng để text-align có hiệu lực */
+}
+
+#pomodoroStatus {
+  font-size: 0.95em;
+  /* Tăng nhẹ kích thước chữ trạng thái */
+  color: var(--subheader-color);
+  min-height: 1.2em;
+  /* Đặt chiều cao tối thiểu để không bị nhảy layout khi text thay đổi */
+  /* Sử dụng màu tiêu đề phụ */
+}
+
+.pomodoro-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  /* Tăng khoảng cách */
+}
+
+.duration-input-group {
+  display: flex;
+  align-items: center;
+  /* Căn giữa label và input theo chiều dọc */
+  justify-content: center;
+  /* Căn giữa các item theo chiều ngang */
+  gap: 8px;
+  /* Khoảng cách nhỏ giữa label và input nếu cần */
+}
+
+.pomodoro-controls label {
+  font-size: 0.9em;
+  white-space: nowrap;
+  flex-shrink: 0;
+  /* Ngăn label bị co lại nếu không đủ không gian */
+  /* Ngăn label xuống dòng nếu quá dài */
+  color: var(--subheader-color);
+}
+
+.pomodoro-controls input[type="number"] {
+  padding: 8px;
+  border: 1px solid var(--input-border-color);
+  border-radius: 6px;
+  /* Bo góc mềm mại hơn */
+  font-size: 0.9em;
+  width: 70px;
+  flex-grow: 0;
+  /* Ngăn input chiếm hết không gian còn lại */
+  /* Tăng nhẹ chiều rộng */
+  text-align: center;
+  background-color: var(--bg-color);
+  /* Nền input giống nền body */
+  color: var(--text-color);
+}
+
+.pomodoro-controls button {
+  width: 100%;
+}
+
+#stopPomodoro {
+  background-color: #dc3545;
+  /* Red for stop/cancel actions */
+}
+
+#stopPomodoro:hover {
+  background-color: #c82333;
+}
+
+
+.hidden {
+  display: none;
+}
+
+footer {
+  display: flex;
+  justify-content: space-around;
+  /* Căn đều các link */
+  align-items: center;
+  margin-top: 15px;
+  /* Khoảng cách với phần tử phía trên */
+  padding-top: 10px;
+  /* Padding phía trên đường kẻ */
+  border-top: 1px solid var(--hr-color);
+  /* Đường kẻ ngang phía trên footer */
+}
+
+footer a {
+  color: var(--link-color);
+  text-decoration: none;
+  /* Bỏ gạch chân mặc định */
+  font-size: 0.9em;
+  padding: 5px 8px;
+  /* Padding cho dễ nhấn */
+  border-radius: 4px;
+  /* Bo góc nhẹ */
+  transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+
+footer a:hover {
+  color: var(--button-hover-bg-color);
+  /* Đổi màu khi hover giống nút */
+  background-color: var(--icon-button-hover-bg-color);
+  /* Thêm nền nhẹ khi hover */
+  text-decoration: underline;
+  /* Thêm gạch chân khi hover */
+}
+
+/* Dark Theme Styles */
+.theme-dark {
+  --bg-color: #202124;
+  /* Nền chính tối (Google dark) */
+  --text-color: #e8eaed;
+  /* Chữ sáng */
+  --container-bg-color: #303134;
+  /* Nền container tối hơn một chút */
+  --header-color: #ecf0f1;
+  --subheader-color: #bdc1c6;
+  /* Chữ phụ sáng hơn */
+  --border-color: #5f6368;
+  /* Viền tối */
+  --button-bg-color: #8ab4f8;
+  /* Nút màu xanh dương sáng (Google dark) */
+  --button-text-color: #202124;
+  /* Chữ trên nút màu tối để tương phản */
+  --button-hover-bg-color: #aecbfa;
+  /* Nút khi hover sáng hơn */
+  --button-disabled-bg-color: #424549;
+  --input-border-color: #5f6368;
+  --link-color: #8ab4f8;
+  --hr-color: #5f6368;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  /* Đổ bóng tối */
+  --icon-button-color: #bdc1c6;
+  --icon-button-hover-bg-color: #3c4043;
+  /* Nền hover tối hơn một chút */
+  --icon-button-active-bg-color: #4a4e52;
+  /* Nền active tối hơn */
+}
+
+.theme-dark .section {
+  box-shadow: 0 2px 5px var(--shadow-color);
+}
+
+.theme-dark .pomodoro-controls input[type="number"] {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border-color: var(--input-border-color);
+}
+
+.theme-dark .quick-blocked-sites-list {
+  border-top-color: var(--border-color);
+}
+
+.theme-dark .quick-blocked-sites-list li {
+  border-bottom-color: var(--border-color);
+}
+
+.theme-dark .quick-blocked-sites-list .remove-site-btn {
+  color: var(--remove-button-bg-color);
+}
+
+.theme-dark .header-switch .slider {
+  background-color: #5f6368;
+  /* Màu nền switch tối khi tắt */
+}
+
+.theme-dark .header-switch input:checked+.slider {
+  background-color: var(--button-bg-color);
+  /* Màu nền switch tối khi bật */
+}
+
+.theme-dark .quick-block-section input[type="text"] {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border-color: var(--input-border-color);
+}

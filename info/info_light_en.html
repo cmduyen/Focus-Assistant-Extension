@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help & Info - Focus Assistant</title>
+    <style>
+        :root {
+            --body-bg-color: #f8f9fa;
+            --text-color: #212529;
+            --container-bg-color: #fff;
+            --card-bg-color: rgba(255, 255, 255, 0.7);
+            --card-border-color: rgba(255, 255, 255, 0.3);
+            --shadow-color: rgba(0, 0, 0, 0.075);
+            --header-color: #343a40;
+            --subheader-color: #495057;
+            --link-color: #0d6efd;
+            --hr-color: rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--body-bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .main-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 25px 35px;
+            background-color: var(--container-bg-color);
+            border-radius: 8px;
+            box-shadow: 0 4px 12px var(--shadow-color);
+        }
+
+        h1 {
+            color: var(--header-color);
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        h2 {
+            color: var(--subheader-color);
+            border-bottom: 1px solid var(--hr-color);
+            padding-bottom: 8px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .info-section {
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: var(--card-bg-color);
+            border: 1px solid var(--card-border-color);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 6px;
+            box-shadow: 0 2px 8px var(--shadow-color);
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .close-link {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+        <h1>Help & Info - Focus Assistant</h1>
+
+        <div class="info-section">
+            <h2>User Guide</h2>
+            <p>Focus Assistant helps you concentrate by blocking distracting websites and managing your time effectively
+                with the Pomodoro Timer.</p>
+            <ul>
+                <li><strong>Focus Mode:</strong> Toggle on/off blocking of websites in your list.</li>
+                <li><strong>Pomodoro Timer:</strong> Set up focused work sessions interspersed with breaks.</li>
+                <li><strong>Block List:</strong> Add or remove websites you want to block in the Settings page.</li>
+                <li><strong>Schedules:</strong> Automatically activate Focus Mode at specific times.</li>
+                <li><strong>Strict Mode:</strong> When enabled, you cannot turn off Focus Mode or stop a running
+                    Pomodoro.</li>
+            </ul>
+        </div>
+
+        <div class="info-section">
+            <h2>About Us</h2>
+            <p>Focus Assistant is developed by [Your Name/Your Company Name].</p>
+            <p>We aim to create tools that help you work more effectively and achieve a better balance.</p>
+            <p>Contact: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+            <p>Website: <a href="https://your-website.com" target="_blank">your-website.com</a></p>
+        </div>
+
+        <div class="info-section">
+            <h2>Other Products</h2>
+            <p>Discover other useful tools from us:</p>
+            <ul>
+                <li><a href="[Link to Product 1]" target="_blank">[Product Name 1]</a> - Short description of product 1.
+                </li>
+                <li><a href="[Link to Product 2]" target="_blank">[Product Name 2]</a> - Short description of product 2.
+                </li>
+            </ul>
+        </div>
+
+        <a href="#" class="close-link" onclick="window.close(); return false;">Close this page</a>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trợ giúp & Thông tin - Focus Assistant</title>
+    <style>
+        :root {
+            --body-bg-color: #202124;
+            --text-color: #e8eaed;
+            --container-bg-color: #303134;
+            --card-bg-color: rgba(45, 46, 48, 0.75);
+            --card-border-color: rgba(255, 255, 255, 0.15);
+            --shadow-color: rgba(0, 0, 0, 0.4);
+            --header-color: #ecf0f1;
+            --subheader-color: #bdc3c7;
+            --link-color: #8ab4f8;
+            --hr-color: #5f6368;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--body-bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .main-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 25px 35px;
+            background-color: var(--container-bg-color);
+            border-radius: 8px;
+            box-shadow: 0 4px 12px var(--shadow-color);
+        }
+
+        h1 {
+            color: var(--header-color);
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        h2 {
+            color: var(--subheader-color);
+            border-bottom: 1px solid var(--hr-color);
+            padding-bottom: 8px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .info-section {
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: var(--card-bg-color);
+            border: 1px solid var(--card-border-color);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 6px;
+            box-shadow: 0 2px 8px var(--shadow-color);
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .close-link {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+        <h1>Trợ giúp & Thông tin - Focus Assistant</h1>
+
+        <div class="info-section">
+            <h2>Hướng dẫn sử dụng</h2>
+            <p>Focus Assistant giúp bạn tập trung bằng cách chặn các trang web gây xao nhãng và quản lý thời gian hiệu
+                quả với Pomodoro Timer.</p>
+            <ul>
+                <li><strong>Chế độ Tập trung:</strong> Bật/tắt chặn các trang web trong danh sách.</li>
+                <li><strong>Pomodoro Timer:</strong> Thiết lập các phiên làm việc tập trung và nghỉ ngơi xen kẽ.</li>
+                <li><strong>Danh sách Chặn:</strong> Thêm hoặc xóa các trang web bạn muốn chặn trong trang Tùy chọn.
+                </li>
+                <li><strong>Lịch trình:</strong> Tự động kích hoạt Chế độ Tập trung vào những thời điểm nhất định.</li>
+                <li><strong>Chế độ Nghiêm ngặt (Strict Mode):</strong> Khi bật, bạn không thể tắt Chế độ Tập trung hoặc
+                    dừng Pomodoro đang chạy.</li>
+            </ul>
+        </div>
+
+        <div class="info-section">
+            <h2>Về chúng tôi</h2>
+            <p>Focus Assistant được phát triển bởi [Tên của bạn/Tên công ty của bạn].</p>
+            <p>Chúng tôi mong muốn tạo ra những công cụ giúp bạn làm việc hiệu quả và cân bằng hơn.</p>
+            <p>Liên hệ: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+            <p>Website: <a href="https://your-website.com" target="_blank">your-website.com</a></p>
+        </div>
+
+        <div class="info-section">
+            <h2>Các sản phẩm khác</h2>
+            <p>Khám phá thêm các công cụ hữu ích khác từ chúng tôi:</p>
+            <ul>
+                <li><a href="[Link sản phẩm 1]" target="_blank">[Tên sản phẩm 1]</a> - Mô tả ngắn về sản phẩm 1.</li>
+                <li><a href="[Link sản phẩm 2]" target="_blank">[Tên sản phẩm 2]</a> - Mô tả ngắn về sản phẩm 2.</li>
+            </ul>
+        </div>
+
+        <a href="#" class="close-link" onclick="window.close(); return false;">Đóng trang này</a>
+    </div>
+</body>
+
+</html>

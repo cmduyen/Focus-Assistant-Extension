@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time to Focus !</title>
+    <style>
+        /* Light Theme Styles */
+        :root {
+            --body-bg-color: #f8f9fa;
+            --text-color: #212529;
+            --container-bg-color: rgba(255, 255, 255, 0.8);
+            /* Nền container trong suốt hơn */
+            --container-shadow-color: rgba(0, 0, 0, 0.075);
+            --heading-color: #2c3e50;
+            /* Giữ màu heading cũ nếu muốn, hoặc đổi thành var(--header-color) */
+            --paragraph-color: #495057;
+            --logo-color: #0d6efd;
+            --icon-color: #0d6efd;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--body-bg-color);
+            color: var(--paragraph-color);
+            /* background-image: url('your-subtle-background-image.jpg'); */
+            /* Tùy chọn: ảnh nền mờ */
+            /* Sử dụng màu paragraph cho text chính */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .container {
+            background-color: var(--container-bg-color);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px var(--container-shadow-color);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            /* Viền cho glass */
+            backdrop-filter: blur(5px);
+            /* Blur nhẹ cho trang chặn */
+            /* Đổ bóng nhẹ hơn */
+            max-width: 500px;
+        }
+
+        h1 {
+            color: var(--heading-color);
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: var(--paragraph-color);
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: var(--logo-color);
+            margin-top: 20px;
+        }
+
+        .icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: var(--icon-color);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Thêm thẻ audio ngay sau body, trỏ đến file âm thanh của bạn -->
+    <!-- Đảm bảo đường dẫn src bắt đầu bằng / để trỏ đến gốc của extension -->
+    <audio id="blockedNotificationSound" src="/sounds/blocked-sound.mp3" preload="auto"></audio>
+
+    <div class="container">
+        <div class="icon">🧘</div>
+        <h1>Time to get back to work !</h1>
+        <p>This website is temporarily blocked by <span class="logo">Focus Assistant</span>to help you stay focused.
+        </p>
+        <p>Let's achieve your goals!</p>
+    </div>
+    <script src="blocked_page_script.js"></script>
+</body>
+
+</html>
