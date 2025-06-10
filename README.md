@@ -1,4 +1,3 @@
-
 # Focus Assistant - Chrome Extension  
 
 ![Chrome Extension](https://img.shields.io/badge/Type-Chrome_Extension-4285F4?logo=google-chrome&logoColor=white)
@@ -107,3 +106,7 @@ Enjoy enhanced focus and productivity with Focus Assistant! 🚀
 
 ![Support](https://img.shields.io/badge/Support-Community_Driven-lightgrey)
 - Community-supported through GitHub issues and discussions
+
+---
+
+Made with ❤️ for everyone by JustDuyen
